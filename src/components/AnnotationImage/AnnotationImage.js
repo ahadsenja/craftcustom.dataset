@@ -21,7 +21,7 @@ class AnnotationImage extends React.Component {
         return (
           <Image 
             height={640}
-            width={994}
+            width={900}
             image={image}
             ref={(node) => {
               this.imageNode = node
