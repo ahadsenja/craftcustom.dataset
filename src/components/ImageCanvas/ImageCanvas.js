@@ -5,7 +5,6 @@ import shortid from 'shortid'
 import Rectangle from '../Rectangle/Rectangle'
 import RectTransformer from '../Rectangle/RectTransformer'
 import AnnotationImage from '../AnnotationImage/AnnotationImage'
-import LabelingForm from '../LabelingForm/LabelingForm'
 // import Portal from '../Portal/Portal'
 import './imageCanvas.css'
 
@@ -112,7 +111,7 @@ class ImageCanvas extends React.Component {
             this.stage = node
           }}
           container='app'
-          width={994}
+          width={900}
           height={640}
           onMouseDown={handleStageMouseDown}
           onTouchStart={handleStageMouseDown}
