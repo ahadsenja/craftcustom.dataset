@@ -1,11 +1,10 @@
 import React from 'react';
-import { Stage, Layer } from 'react-konva'
+import { Stage, Layer, Image } from 'react-konva'
 import shortid from 'shortid'
-
+import Portal from '../Portal/Portal'
 import Rectangle from '../Rectangle/Rectangle'
 import RectTransformer from '../Rectangle/RectTransformer'
 import AnnotationImage from '../AnnotationImage/AnnotationImage'
-// import Portal from '../Portal/Portal'
 import './imageCanvas.css'
 
 class ImageCanvas extends React.Component {
@@ -101,8 +100,9 @@ class ImageCanvas extends React.Component {
       handleStageMouseDown,
       handleNewRectChange,
       handleRectChange,
-      handleStageMouseUp 
+      handleStageMouseUp,
     } = this
+    console.log(`ImageCanvas ${this.props.newImage ? this.props.newImage.src : this.props.newImage }`)
 
     return (
       <div id="app">
@@ -122,7 +122,7 @@ class ImageCanvas extends React.Component {
         >
           <Layer>
             {rectangles.map((rect, i) => (
-              <Rectangle 
+              <Rectangle
                 className='rect'
                 key={rect.key}
                 {...rect}
@@ -139,7 +139,14 @@ class ImageCanvas extends React.Component {
               this.img = node
             }}
           >
-            <AnnotationImage />
+            <Image
+              height={640}
+              width={900}
+              image={this.props.newImage}
+              ref={(node) => {
+                this.imageNode = node
+              }}
+            /> 
           </Layer>
         </Stage>
       </div>

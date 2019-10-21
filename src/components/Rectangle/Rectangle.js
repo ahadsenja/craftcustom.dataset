@@ -1,7 +1,14 @@
 import React from 'react'
 import { Rect } from 'react-konva'
+import DeleteBox from './DeleteBox'
 
 class Rectangle extends React.Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            mouseOver: false,
+        }
+    }
     componentDidUpdate() {
         this.rect.getLayer().batchDraw()
     }
@@ -59,7 +66,11 @@ class Rectangle extends React.Component {
                 ref={(node) => {
                     this.rect = node
                 }}
-            />
+            >
+                {this.state.mouseOver && (
+                    <DeleteBox boxId={this.props.box.id} isDrawing={this.props.isDrawing} />
+                )}
+            </Rect>
         )
     }
 }
