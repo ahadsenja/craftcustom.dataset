@@ -18,7 +18,7 @@
     "react-image-annotation": "^0.9.9",
     "react-konva": "^16.9.0-0",
     "react-router-dom": "^5.0.1",
-    "react-scripts": "3.1.1",
+    "react-scripts": "5.0.1",
     "shortid": "^2.2.15",
     "styled-components": "^4.4.0",
     "use-image": "^1.0.5"
